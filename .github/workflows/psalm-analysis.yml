@@ -27,3 +27,9 @@ jobs:
         uses: github/codeql-action/upload-sarif@v1
         with:
           sarif_file: results
+
+      - name: Upload SARIF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: psalm.sarif
+          path: ${{runner.workspace}}/results/*.sarif
